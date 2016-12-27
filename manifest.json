@@ -1,0 +1,29 @@
+{
+  "manifest_version": 2,
+
+  "name": "RMP@USC",
+  "description": "View Rate My Professor Ratings on WebReg @ USC!",
+  "version": "1.0",
+
+  "browser_action": {
+    "default_icon": "icon.png"
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://webreg.usc.edu/*"],
+      "js": ["jquery-3.1.1.min.js", "script.js"]
+    }
+  ],
+  "background": {
+    "scripts": ["bg.js"],
+    "persistent": false
+  },
+  "web_accessible_resources": [
+    "http://www.ratemyprofessors.com/*"
+  ],
+  "permissions": [
+    "activeTab",
+    "https://webreg.usc.edu/*",
+    "http://www.ratemyprofessors.com/*"
+  ]
+}
